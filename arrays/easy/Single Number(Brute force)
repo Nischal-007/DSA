@@ -1,0 +1,22 @@
+//tc->o(n^2)
+//Input: nums = [4,1,2,1,2]
+//Output: 4
+//you basically iterate through the loop n times and have cnt , to increment it each time it occurs again so only 1 element will have cnt 1 all others will have 2 ,
+// so ull just return the one with the count 1 , very slow method
+//Time complexity= O(n^2)
+//space complexity=o(1) since we are not using any extra data structure
+
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        for (int i=0;i<nums.size();i++){
+            int cnt = 0;int x;
+            x=nums[i];
+            for(int j=0;j<nums.size();j++){
+                if(nums[j]==x){
+                    cnt++;
+                }
+            }if(cnt==1)return x;
+        }return 0;
+    }
+};
