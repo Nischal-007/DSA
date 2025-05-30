@@ -1,0 +1,19 @@
+//LeetCode
+/*Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+
+You must implement a solution with a linear runtime complexity and use only constant extra space.*/
+//Input: nums = [4,1,2,1,2]
+//Output: 4
+//most optimal approach which uses xor to easily solve the problem in TC of O(N) and SC of O(1) , basically beacuse we know that xor of any two same numbers is 0 itself,
+//so basically xor of any number that occurs two times in the arr is equal to 0 and xor of 0 and any number is the number itself , so only the single number which occurs once is left at the end which we return
+//to get the answer
+ 
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int Xor=0;
+        for(int i=0;i<nums.size();i++){
+            Xor=Xor^nums[i];
+        }return Xor;
+    }
+};
