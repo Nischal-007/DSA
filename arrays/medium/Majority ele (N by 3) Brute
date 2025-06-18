@@ -17,3 +17,7 @@ public:
         }return ls;
     }
 };
+
+
+time complexity- O(N^2)
+space complexity- O(1)
