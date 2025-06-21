@@ -9,7 +9,7 @@ void merge(long long nums1[],long long nums2[],int m,int n){
     int gap=(len/2)+(len%2);
     while(gap>0){
         int left=0;
-        int right=left+gap
+        int right=left+gap;
         whiile(right<len){
             if(left<m && right>=0){
                 swapifgreater(nums1,nums2,left,right-m);
