@@ -1,0 +1,21 @@
+class Solution {
+  public:
+    long subarrayXor(vector<int> &arr, int k) {
+        // code here
+        int n=arr.size();
+        int count=0;
+        
+        for(int i=0;i<n;i++){
+            for(int j=i;j<n;j++){
+            int sum=0;
+            for(int K=i;K<=j;K++){
+            sum=sum^arr[K];}
+            if(sum==k){
+                count++;
+            }
+          }
+        }return count;
+    }
+};
+//Time Complexity: O(N^3) approx.
+//Space Complexity: O(1)
