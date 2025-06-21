@@ -1,0 +1,24 @@
+class Solution {
+  public:
+    long subarrayXor(vector<int> &arr, int k) {
+        // code here
+        int n=arr.size();
+        int xr=0;
+        
+        map<int,int>mpp;
+        mpp[xr]++;
+        int cnt=0;
+        for(int i=0;i<n;i++){
+            //prefix XOR till index i
+            xr=xr^arr[i];
+            int x=xr^k;
+            //add the occurence of xr^k to count
+            cnt +=mpp[x];
+            //insert prefix xor till i into map
+            mpp[xr]++;
+        }
+        return cnt;
+    }
+};
+//Time Complexity: O(N) or O(N log N) depending on which map we use
+//Space Complexity: O(N) because we using a map
