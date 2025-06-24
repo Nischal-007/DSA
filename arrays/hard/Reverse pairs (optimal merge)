@@ -62,4 +62,4 @@ public:
 };
 
 //time complexity:O(2N*logN)
-//space complexity:O(N)
+//space complexity:O(N) as we use temp array to store elements in sorted array
