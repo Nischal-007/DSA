@@ -14,5 +14,5 @@ public:
         }return -1;
     }
 };
-//time complexity:O(N*log N)
+//time complexity:O(log N)
 //space complexity:O(1)
