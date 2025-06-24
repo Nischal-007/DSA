@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int maxProduct(vector<int>& nums) {
+        int result=nums[0];
+        int n=nums.size();
+        for(int i=0;i<n;i++){
+            int p=1;
+            for(int j=i;j<n;j++){
+                p*=nums[j];
+                result=max(result,p);
+                
+            }
+        }return result;
+    }
+};
+//time complexity:O(n^2)
+//space complexity:O(1)
