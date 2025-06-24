@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int lowerBound(vector<int> arr,int n,int x){
+    int low=0;int high=n-1;
+    int ans_space=n;
+
+    while(low<=high){
+       int mid=(low+high)/2;
+       if(arr[mid]>=x){
+           ans=mid;
+           high=mid-1;
+       }else{
+            low=mid+1;
+       }
+   }
+   return ans;
+}
+
+//time complexity:O(log N)
+//space complexity: O(1)
+//or for c++ when u want the lower bound in a more complex u can just type
+//lb=lower_bound(arr,arr+n,n)                 for arrays
+//example:lb=lower_bound(arr+2,arr+7,7)
+// or
+//lb=lower_bound(arr.begin(),arr.end())-arr.begin();     for vectors
