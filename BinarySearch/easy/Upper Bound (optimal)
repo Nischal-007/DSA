@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int upperBound(vector<int> nums, int n,int x){
+    int low=0;int high=n-1;
+    int ans_space=n;
+
+    while(low<=high){
+         int mid=(low+high)/2;
+         if(arr[mid]>x){
+            ans=mid;
+            high=mid-1;
+         }else{
+            low=mid+1;
+         }
+     }
+     return ans;
+ }
+
+//time complexity:O(log N)
+//space complexity: O(1)
+//or for c++ u can just type if using inbuilt functions is ok for complex problems no need to write the code from scratch
+//ub=upper_bound(arr,arr+n,x)
+//example:ub=upper_bound(arr+2,arr+7,7)
+// or
+//int index=upper_bound(arr.begin(),arr.end(),x)-arr.begin();     for vectors
