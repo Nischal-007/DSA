@@ -23,4 +23,4 @@ int lowerBound(vector<int> arr,int n,int x){
 //lb=lower_bound(arr,arr+n,target)                 for arrays
 //example:lb=lower_bound(arr+2,arr+7,7)
 // or
-//lb=lower_bound(arr.begin(),arr.end())-arr.begin();     for vectors
+//int index=lower_bound(arr.begin(),arr.end(),target)-arr.begin();     for vectors
