@@ -19,7 +19,7 @@ int lowerBound(vector<int> arr,int n,int x){
 
 //time complexity:O(log N)
 //space complexity: O(1)
-//or for c++ when u want the lower bound in a more complex u can just type
+//or for c++ u can just type if using inbuilt functions is ok for complex problems no need to write the code from scratch
 //lb=lower_bound(arr,arr+n,n)                 for arrays
 //example:lb=lower_bound(arr+2,arr+7,7)
 // or
