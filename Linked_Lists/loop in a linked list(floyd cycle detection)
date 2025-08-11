@@ -1,0 +1,24 @@
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+        ListNode* fast=head;
+        ListNode* slow=head;
+
+        while(fast !=  nullptr && fast->next != nullptr){
+            fast=fast->next->next;
+            slow=slow->next;
+            if(fast==slow){
+                return true;
+            }
+        }return false;
+    }
+};
+-----------------------------------------------
+Time Complexity: O(n) — each pointer moves at most n steps.
+Space Complexity: O(1) — only two pointers are used.
+
+
+1 → 2 → 3 → 4 → 5
+         ↑       ↓
+         8 ← 7 ← 6
+
