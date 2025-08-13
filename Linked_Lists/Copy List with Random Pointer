@@ -1,0 +1,34 @@
+
+class Solution {
+public:
+    Node* copyRandomList(Node* head) {
+        Node * temp=head;
+        unordered_map<Node*, Node*> mpp;
+        
+        while(temp!=NULL){
+            mpp[temp]=new Node(temp->val);
+            temp=temp->next;
+        }
+
+        temp=head;
+        while(temp!=NULL){
+            mpp[temp]->next=mpp[temp->next];
+            mpp[temp]->random=mpp[temp->random];
+            temp=temp->next;
+        }return mpp[head];
+    }
+};
+
+
+---------------------------------------------------------------
+Time complexity
+Average time: O(n) Two full passes over n nodes; each unordered_map insertion/lookup is expected O(1), so total is linear.
+
+Worst-case time: O(n²) If the hash table suffers pathological collisions, unordered_map operations can degrade to O(n), making the two passes quadratic. This is rare in practice.
+
+Space complexity
+O(n) extra space
+
+The unordered_map<Node*, Node*> mpp holds a mapping from each original node to its clone. This requires one entry per original node, so proportional to n.
+
+The new Node(...) allocations themselves are necessary for the output list, so they don’t count toward extra space.
